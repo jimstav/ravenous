@@ -16,10 +16,16 @@ const businesses = [
 const BusinessList = () => {
   return (
     <>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-        {businesses.map((value, index) => {
-          return <Business key={index} />;
-        })}
+      <div className="container">
+        <div className="row">
+          {businesses.map((value, index) => {
+            return (
+              <div key={index} className="col-md-4 mb-4">
+                <Business />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

@@ -14,21 +14,23 @@ const business = {
 
 const Business = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <img src={business.imageSrc} alt={business.name} width={230} />
-      <h2>{business.name}</h2>
-      <div style={{ display: "flex", justifyContent: "spaceBetween" }}>
-        <div>
-          <p>{business.address}</p>
-          <p>{business.city}</p>
-          <p>
-            {business.state} {business.zipCode}
-          </p>
-        </div>
-        <div>
-          <h3>{business.category.toUpperCase()}</h3>
-          <h3>{business.rating} stars</h3>
-          <p>{business.reviewCount} reviews</p>
+    <div className="card">
+      <img src={business.imageSrc} alt={business.name} className="card-img-top" />
+      <div className="card-body">
+        <h5 className="card-title small">{business.name}</h5>
+        <div className="card-text row">
+          <div className="col-md-7">
+            <p className="small">{business.address}</p>
+            <p className="small">{business.city}</p>
+            <p className="small">
+              {business.state} {business.zipCode}
+            </p>
+          </div>
+          <div className="col-md-5">
+            <h6 className="small">{business.category.toUpperCase()}</h6>
+            <h6 className="small">{business.rating} stars</h6>
+            <p className="small">{business.reviewCount} reviews</p>
+          </div>
         </div>
       </div>
     </div>

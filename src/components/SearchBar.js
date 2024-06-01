@@ -9,21 +9,23 @@ const sortByOptions = {
 const SearchBar = () => {
   return (
     <>
-      <div>
-        <ul style={{ listStyle: "none", display: "flex", justifyContent: "center" }}>
+      <div className="d-flex justify-content-center align-items-center mb-3 mt-3">
+        <ul className="list-group list-group-horizontal">
           {Object.keys(sortByOptions).map((key) => (
-            <li key={sortByOptions[key]} style={{ marginRight: 10, marginLeft: 10 }}>
+            <li key={sortByOptions[key]} className="list-group-item">
               {key}
             </li>
           ))}
         </ul>
       </div>
-      <div style={{ display: "flex", justifyContent: "center", margin: 10 }}>
-        <input type="text" placeholder="Search Businesses" />
-        <input type="text" placeholder="Where?" />
+      <div className="input-group mb-3">
+        <input type="text" className="form-control" placeholder="Search Businesses" />
+        <input type="text" className="form-control" placeholder="Where?" />
       </div>
-      <div style={{ display: "flex", justifyContent: "center", margin: 10 }}>
-        <button>Let's Go</button>
+      <div className="d-flex justify-content-center align-items-center mb-3">
+        <button type="button" class="btn btn-primary">
+          Let's Go
+        </button>
       </div>
     </>
   );
