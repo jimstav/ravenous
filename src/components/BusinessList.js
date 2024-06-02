@@ -1,19 +1,7 @@
 import React from "react";
 import Business from "./Business";
 
-const businesses = [
-  { name: "dummy business 1" },
-  { name: "dummy business 2" },
-  { name: "dummy business 3" },
-  { name: "dummy business 4" },
-  { name: "dummy business 5" },
-  { name: "dummy business 6" },
-  { name: "dummy business 7" },
-  { name: "dummy business 8" },
-  { name: "dummy business 9" },
-];
-
-const BusinessList = () => {
+const BusinessList = ({ businesses }) => {
   return (
     <>
       <div className="container">
@@ -21,7 +9,7 @@ const BusinessList = () => {
           {businesses.map((value, index) => {
             return (
               <div key={index} className="col-md-4 mb-4">
-                <Business />
+                <Business business={value} />
               </div>
             );
           })}
