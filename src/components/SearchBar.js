@@ -11,6 +11,11 @@ const SearchBar = () => {
   const [searchLocation, setSearchLocation] = useState("");
   const [sortingOption, setSortingOption] = useState("best_match");
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(`Searching Yelp with ${searchTerm}, ${searchLocation}, ${sortingOption}`);
+  };
+
   return (
     <>
       <div className="d-flex justify-content-center align-items-center mb-3 mt-3">
@@ -43,7 +48,7 @@ const SearchBar = () => {
         />
       </div>
       <div className="d-flex justify-content-center align-items-center mb-3">
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-primary" onClick={handleSearch}>
           Let's Go
         </button>
       </div>
