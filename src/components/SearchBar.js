@@ -27,8 +27,20 @@ const SearchBar = () => {
         </ul>
       </div>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="Search Businesses" />
-        <input type="text" className="form-control" placeholder="Where?" />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search Businesses"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Where?"
+          value={searchLocation}
+          onChange={(event) => setSearchLocation(event.target.value)}
+        />
       </div>
       <div className="d-flex justify-content-center align-items-center mb-3">
         <button type="button" className="btn btn-primary">
