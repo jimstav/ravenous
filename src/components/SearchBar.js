@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const sortByOptions = {
   "Best Match": "best_match",
@@ -7,12 +7,20 @@ const sortByOptions = {
 };
 
 const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchLocation, setSearchLocation] = useState("");
+  const [sortingOption, setSortingOption] = useState("best_match");
+
   return (
     <>
       <div className="d-flex justify-content-center align-items-center mb-3 mt-3">
         <ul className="list-group list-group-horizontal">
           {Object.keys(sortByOptions).map((key) => (
-            <li key={sortByOptions[key]} className="list-group-item">
+            <li
+              key={sortByOptions[key]}
+              onClick={() => setSortingOption(sortByOptions[key])}
+              className={`list-group-item ${sortingOption === sortByOptions[key] ? "active" : ""}`}
+            >
               {key}
             </li>
           ))}
@@ -23,7 +31,7 @@ const SearchBar = () => {
         <input type="text" className="form-control" placeholder="Where?" />
       </div>
       <div className="d-flex justify-content-center align-items-center mb-3">
-        <button type="button" class="btn btn-primary">
+        <button type="button" className="btn btn-primary">
           Let's Go
         </button>
       </div>

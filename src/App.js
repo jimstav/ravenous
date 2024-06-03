@@ -72,7 +72,7 @@ const businesses = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <>
       <h1 className="text-center">ravenous</h1>
@@ -80,6 +80,6 @@ function App() {
       <BusinessList businesses={businesses} />
     </>
   );
-}
+};
 
 export default App;
