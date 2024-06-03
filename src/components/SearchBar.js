@@ -6,14 +6,14 @@ const sortByOptions = {
   "Most Reviewed": "review_count",
 };
 
-const SearchBar = () => {
+const SearchBar = ({ search }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchLocation, setSearchLocation] = useState("");
   const [sortingOption, setSortingOption] = useState("best_match");
 
   const handleSearch = (event) => {
     event.preventDefault();
-    console.log(`Searching Yelp with ${searchTerm}, ${searchLocation}, ${sortingOption}`);
+    search(searchTerm, searchLocation, sortingOption);
   };
 
   return (
