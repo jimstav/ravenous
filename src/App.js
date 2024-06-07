@@ -1,6 +1,7 @@
 import "./App.css";
 import BusinessList from "./components/BusinessList";
 import SearchBar from "./components/SearchBar";
+import { searchBusinesses } from "./utils/yelpAPI";
 
 const businesses = [
   {
@@ -79,7 +80,7 @@ const App = () => {
   return (
     <>
       <h1 className="text-center">ravenous</h1>
-      <SearchBar search={searchYelp} />
+      <SearchBar search={searchBusinesses} />
       <BusinessList businesses={businesses} />
     </>
   );
