@@ -9,7 +9,7 @@ const BusinessList = ({ businesses }) => {
           {businesses.map((value, index) => {
             return (
               <div key={index} className="col-md-4 mb-4">
-                <Business business={value} />
+                <Business key={value.id} business={value} />
               </div>
             );
           })}
